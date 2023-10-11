@@ -1,5 +1,26 @@
+import { useState, useEffect } from 'react';
+import { getAllDrinksByFirstLetter } from '../api';
+import { Preloader } from '../components/Preloader';
+import { CategoryList } from '../components/CategoryList';
+
 function Home() {
-    return <h1>Hello from Home page</h1>;
+    const [catalog, setCatalog] = useState([]);
+
+    useEffect(() => {
+        getAllDrinksByFirstLetter().then((data) => {
+            setCatalog(data.drinks);
+        });
+    }, []);
+
+    return (
+        <>
+            {!catalog.length ? (
+                <Preloader />
+            ) : (
+                <CategoryList catalog={catalog} />
+            )}
+        </>
+    );
 }
 
 export { Home };

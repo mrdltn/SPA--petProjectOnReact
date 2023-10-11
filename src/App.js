@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
+import { Movie } from './pages/Movie';
 
 function App() {
     return (
@@ -13,10 +14,11 @@ function App() {
                 <Header />
                 <main className='container content'>
                     <Routes>
-                        <Route exact path='/' Component={Home} />
-                        <Route exact path='/about' Component={About} />
-                        <Route exact path='/contacts' Component={Contact} />
-                        <Route path='/*' Component={NotFound} />
+                        <Route exact path='/' element={<Home />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/contacts' element={<Contact />} />
+                        <Route path='/movies/:title' element={<Movie />} />
+                        <Route path='/*' element={<NotFound />} />
                     </Routes>
                 </main>
                 <Footer />
