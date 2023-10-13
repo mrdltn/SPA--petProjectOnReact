@@ -10,9 +10,9 @@ const getAllDrinksByFirstLetter = async () => {
     return await res.json();
 };
 
-const getFilteredCategory = async (catName) => {
-    const res = await fetch(API_URL + 'filter.php?c' + catName);
+const getFilterByCategory = async (Cocktail) => {
+    const res = await fetch(API_URL + 'filter.php?c=' + Cocktail);
     return await res.json();
 };
 
-export { getDrinkById, getAllDrinksByFirstLetter, getFilteredCategory };
+export { getDrinkById, getAllDrinksByFirstLetter, getFilterByCategory };
