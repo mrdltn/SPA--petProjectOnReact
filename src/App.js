@@ -5,9 +5,8 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { NotFound } from './pages/NotFound';
-// import { Movie } from './pages/Movie';
-// import { Drink } from './components/Drink';
 import { Category } from './pages/Category';
+import { Recipe } from './pages/Recipe';
 
 function App() {
     return (
@@ -20,6 +19,7 @@ function App() {
                         <Route path='/about' element={<About />} />
                         <Route path='/contacts' element={<Contact />} />
                         <Route path='/category/:name' element={<Category />} />
+                        <Route path='/drink/:id' element={<Recipe />} />
                         <Route path='/*' element={<NotFound />} />
                     </Routes>
                 </main>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getFilterByCategory } from '../api';
 import { Preloader } from '../components/Preloader';
 import { DrinksList } from '../components/DrinksList';
@@ -7,13 +7,19 @@ import { DrinksList } from '../components/DrinksList';
 function Category() {
     const { name } = useParams();
     const [drinks, setDrinks] = useState([]);
+    const goBack = useNavigate();
 
     useEffect(() => {
         getFilterByCategory(name).then((data) => setDrinks(data.drinks));
     }, [name]);
 
     return (
-        <>{!drinks.length ? <Preloader /> : <DrinksList drinks={drinks} />}</>
+        <>
+            <button className='btn' onClick={() => goBack(-1)}>
+                Go back
+            </button>
+            {!drinks.length ? <Preloader /> : <DrinksList drinks={drinks} />}
+        </>
     );
 }
 
