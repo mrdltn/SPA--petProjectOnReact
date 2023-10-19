@@ -20,7 +20,7 @@ function Search({ cb = Function.prototype }) {
                     type='search'
                     name=''
                     id='search-field'
-                    placeholder='search'
+                    placeholder='tab to search a drink'
                     onKeyDown={handleKey}
                     onChange={(e) => setValue(e.target.value)}
                     value={value}
