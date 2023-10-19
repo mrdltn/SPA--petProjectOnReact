@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SPA--petProjectOnReact/static/css/main.0da68696.css",
+    "main.js": "/SPA--petProjectOnReact/static/js/main.768643f2.js",
+    "index.html": "/SPA--petProjectOnReact/index.html",
+    "main.0da68696.css.map": "/SPA--petProjectOnReact/static/css/main.0da68696.css.map",
+    "main.768643f2.js.map": "/SPA--petProjectOnReact/static/js/main.768643f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0da68696.css",
+    "static/js/main.768643f2.js"
+  ]
+}
